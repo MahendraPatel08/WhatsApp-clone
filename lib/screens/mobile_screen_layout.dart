@@ -54,7 +54,7 @@ class MobileScreenLayout extends StatelessWidget {
             ],
           ),
         ),
-        body: ContactList(),
+        body: ContactsList(),
       ),
     );
   }
