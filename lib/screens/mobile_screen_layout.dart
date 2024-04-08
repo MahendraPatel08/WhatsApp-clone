@@ -18,7 +18,7 @@ class MobileScreenLayout extends StatelessWidget {
             'WhatsApp',
             style: TextStyle(
               fontSize: 20,
-              color: Colors.grey,
+              color: tabColor,
               fontWeight: FontWeight.bold,
             ),
           ),
@@ -55,6 +55,14 @@ class MobileScreenLayout extends StatelessWidget {
           ),
         ),
         body: const ContactsList(),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {},
+          backgroundColor: tabColor,
+          child: const Icon(
+            Icons.message,
+            color: Colors.white,
+          ),
+        ),
       ),
     );
   }
