@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:whatsapp_clone/widgets/contact_list.dart';
+import 'package:whatsapp_clone/widgets/web_chat_appbar.dart';
 import 'package:whatsapp_clone/widgets/web_profile_bar.dart';
+import 'package:whatsapp_clone/widgets/web_search_bar.dart';
 
 class WebScreenLayout extends StatelessWidget {
   const WebScreenLayout({super.key});
@@ -17,7 +19,7 @@ class WebScreenLayout extends StatelessWidget {
               child: Column(
                 children: [
                   WebProfileBar(),
-                  //
+                  WebSearchBar(),
                   ContactsList(),
                 ],
               ),
@@ -30,7 +32,11 @@ class WebScreenLayout extends StatelessWidget {
                   image: AssetImage('assets/backgroundimage.png'),
                   fit: BoxFit.cover),
             ),
-            child: const Center(child: Text('chats are here!')),
+            child: Column(
+              children: [
+                const WebChatAppbar(),
+              ],
+            ),
           )
         ],
       ),

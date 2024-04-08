@@ -3,7 +3,7 @@ import 'package:whatsapp_clone/colors.dart';
 import 'package:whatsapp_clone/info.dart';
 
 class ContactsList extends StatelessWidget {
-  const ContactsList({Key? key}) : super(key: key);
+  const ContactsList({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -29,13 +29,13 @@ class ContactsList extends StatelessWidget {
                     title: Text(
                       info[index]['name'].toString(),
                       style: const TextStyle(
-                        fontSize: 18,
-                      ),
+                          fontSize: 18, overflow: TextOverflow.ellipsis),
                     ),
                     subtitle: Padding(
                       padding: const EdgeInsets.only(top: 6.0),
                       child: Text(
                         info[index]['message'].toString(),
+                        overflow: TextOverflow.ellipsis,
                         style: const TextStyle(fontSize: 15),
                       ),
                     ),
