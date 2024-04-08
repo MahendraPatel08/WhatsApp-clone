@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:whatsapp_clone/colors.dart';
 import 'package:whatsapp_clone/responsive/responsive_layout.dart';
 import 'package:whatsapp_clone/screens/mobile_screen_layout.dart';
 import 'package:whatsapp_clone/screens/web_screen_layout.dart';
@@ -12,10 +13,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'WhatsApp Clone',
-      home: ResponsiveLayout(
+      theme: ThemeData.dark().copyWith(
+        scaffoldBackgroundColor: backgroundColor,
+      ),
+      home: const ResponsiveLayout(
         mobileScreenLayout: MobileScreenLayout(),
         webScreenLayout: WebScreenLayout(),
       ),
