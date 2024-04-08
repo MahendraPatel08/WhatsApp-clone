@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:whatsapp_clone/colors.dart';
+import 'package:whatsapp_clone/widgets/contact_list.dart';
 
 class MobileScreenLayout extends StatelessWidget {
   const MobileScreenLayout({super.key});
@@ -10,37 +11,50 @@ class MobileScreenLayout extends StatelessWidget {
       length: 3,
       child: Scaffold(
         appBar: AppBar(
-          backgroundColor: appBarColor,
           elevation: 0,
-          title: Text(
-            'Whatsapp',
-            style: TextStyle(
-                color: Colors.grey, fontWeight: FontWeight.bold, fontSize: 20),
-          ),
+          backgroundColor: appBarColor,
           centerTitle: false,
+          title: const Text(
+            'WhatsApp',
+            style: TextStyle(
+              fontSize: 20,
+              color: Colors.grey,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
           actions: [
             IconButton(
+              icon: const Icon(Icons.search, color: Colors.grey),
               onPressed: () {},
-              icon: Icon(Icons.search),
             ),
             IconButton(
+              icon: const Icon(Icons.more_vert, color: Colors.grey),
               onPressed: () {},
-              icon: Icon(Icons.more_vert),
             ),
           ],
-          bottom: TabBar(
+          bottom: const TabBar(
+            indicatorSize: TabBarIndicatorSize.tab,
             indicatorColor: tabColor,
             indicatorWeight: 4,
             labelColor: tabColor,
             unselectedLabelColor: Colors.grey,
-            labelStyle: TextStyle(fontWeight: FontWeight.bold),
+            labelStyle: TextStyle(
+              fontWeight: FontWeight.bold,
+            ),
             tabs: [
-              Text('CHATS'),
-              Text('STATUS'),
-              Text('CALLS'),
+              Tab(
+                text: 'CHATS',
+              ),
+              Tab(
+                text: 'STATUS',
+              ),
+              Tab(
+                text: 'CALLS',
+              ),
             ],
           ),
         ),
+        body: ContactList(),
       ),
     );
   }
