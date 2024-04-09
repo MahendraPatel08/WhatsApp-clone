@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:whatsapp_clone/colors.dart';
 
 class OTPScreen extends StatefulWidget {
   static const String routName = '/otp-screen';
@@ -13,6 +14,12 @@ class OTPScreen extends StatefulWidget {
 class _OTPScreenState extends State<OTPScreen> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Verifying your number'),
+        elevation: 0,
+        backgroundColor: backgroundColor,
+      ),
+    );
   }
 }
